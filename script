@@ -68,16 +68,16 @@ v:Disable()
 end
 end
 if identifyexecutor() == "Synapse X" and syn.protect_gui then
-syn.protect_gui(GuiObject)
-GuiObject.Parent = game:GetService("CoreGui")
+syn.protect_gui(UI)
+UI.Parent = game:GetService("CoreGui")
 elseif gethui then
-   GuiObject.Parent = game:GetService("CoreGui")
+   UI.Parent = game:GetService("CoreGui")
 elseif hiddenUI then
-   GuiObject.Parent = hiddenUI()
+   UI.Parent = hiddenUI()
 elseif get_hidden_gui then
-   GuiObject.Parent = get_hidden_gui()
+   UI.Parent = get_hidden_gui()
 elseif not dentifyexecutor() == "Synapse X" and syn.protect_gui or gethui or hiddenUI or get_hidden_gui then
-   GuiObject.Parent = game:GetService("CoreGui")
+   UI.Parent = game:GetService("CoreGui")
 game:GetService("StarterGui"):SetCore("SendNotification", {
 Title = 'Warning!',
 Text = "Your executor does not have a Protect GUI function. Which in that case, you are not safe from GUI Detections.",
