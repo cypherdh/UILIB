@@ -401,15 +401,7 @@ function library:CreateWindow(title, bind, discinv)
 
     local UICorner5 = Instance.new("UICorner")
     UICorner5.Parent = TextButton1
-    if syn then
-        getgenv().http_request = syn.request
-    elseif SENTINEL_LOADED then
-        getgenv().http_request = request
-    elseif PROTOSMASHER_LOADED then
-        getgenv().http_request = request
-    elseif KRNL_LOADED then
-        getgenv().http_request = request
-    end
+    getgenv().http_request = request or http_request or identifyexecutor() == "Synapse X" and syn.request or http and http.request
 
     TextButton1.MouseButton1Click:Connect(
         function()
