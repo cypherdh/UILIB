@@ -1,3 +1,7 @@
+if getgenv().GUIOpened then
+	return print("GUI is already open")
+end
+
 local library = {}
 
 library.theme = {
@@ -1639,4 +1643,5 @@ function library:CreateWindow(title, bind, discinv)
     end
     return tabs
 end
-return library
+--return library
+getgenv().GUIOpened12 = true
