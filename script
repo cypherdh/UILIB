@@ -189,16 +189,16 @@ end
 local venuslib = utility.create("ScreenGui", {})
 
 if identifyexecutor() == "Synapse X" and syn.protect_gui then
-	syn.protect_gui(GuiObject)
-	GuiObject.Parent = coreGui
+	syn.protect_gui(venuslib)
+	venuslib.Parent = coreGui
 elseif gethui then
-    GuiObject.Parent = gethui()
+    venuslib.Parent = gethui()
 elseif hiddenUI then
-    GuiObject.Parent = hiddenUI()
+    venuslib.Parent = hiddenUI()
 elseif get_hidden_gui then
-    GuiObject.Parent = get_hidden_gui()
-elseif not (identifyexecutor() == "Synapse X" and syn.protect_gui) or gethui or hiddenUI or get_hidden_gui then
-    GuiObject.Parent = coreGui
+    venuslib.Parent = get_hidden_gui()
+elseif not identifyexecutor() == "Synapse X" and syn.protect_gui or gethui or hiddenUI or get_hidden_gui then
+    venuslib.Parent = coreGui
 end
 
 library = utility.format_table(library)
